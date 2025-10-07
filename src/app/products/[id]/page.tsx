@@ -35,7 +35,7 @@ export async function generateMetadata({params}: PageProps<Params>) {
   const p = await params
   
   const { title, description, image } = await getProduct(p.id);
-  const ogImage = `/api/og?title=${encodeURIComponent(title)}&image=${encodeURIComponent('https://mediamodifier.com/blog/wp-content/uploads/2019/07/standing-software-product-box-mockup-maker-1024x683.jpeg')}`;
+  const ogImage = `/api/og?title=${encodeURIComponent(title)}&image=${encodeURIComponent(`${FRONTEND_HOST}${image}`)}`;
 
   return {
     title,

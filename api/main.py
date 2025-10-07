@@ -17,7 +17,7 @@ products = {
     "title": f"Product {i}",
     "price": round(random.random() * (random.random() * 10), 2),
     "description": f"Description for product {i}.",
-    "image": f"/images/product.jpg",
+    "image": f"/images/product.png",
   } for i in range(1, 15)
 }
 
