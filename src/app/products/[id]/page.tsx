@@ -1,13 +1,13 @@
-import { API_HOST } from "@/lib/api";
+import { API_HOST, FRONTEND_HOST } from "@/lib/api";
 import { Product } from "@/types/product";
 import { PageProps } from "@/types/common";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 
 export default async function ProductPage({params}: PageProps<Params>) {
-  params = await params
+  const p = await params
 
-  const product: Product | null = await getProduct(params.id)
+  const product: Product | null = await getProduct(p.id)
   if (!product) return notFound();
 
   return (
@@ -32,10 +32,10 @@ export default async function ProductPage({params}: PageProps<Params>) {
 }
 
 export async function generateMetadata({params}: PageProps<Params>) {
-  params = await params
+  const p = await params
   
-  const { title, description, image } = await getProduct(params.id);
-  const ogImage = `/api/og?title=${encodeURIComponent(title)}&image=${encodeURIComponent(image)}`;
+  const { title, description, image } = await getProduct(p.id);
+  const ogImage = `/api/og?title=${encodeURIComponent(title)}&image=${encodeURIComponent('https://mediamodifier.com/blog/wp-content/uploads/2019/07/standing-software-product-box-mockup-maker-1024x683.jpeg')}`;
 
   return {
     title,

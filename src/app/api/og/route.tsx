@@ -12,7 +12,7 @@ export async function GET(req: Request) {
 
   return new ImageResponse(
     (
-      <div style={{background: "#fff", width: "100%", height: "100%"}}>
+      <div style={{background: "#fff", width: "100%", height: "100%", display: "flex", flexDirection: "column"}}>
         {image && <img src={image} width={300} height={300} />}
         <p>{title}</p>
       </div>

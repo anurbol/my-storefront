@@ -1,4 +1,4 @@
 export interface PageProps<P> {
-  params: P,
-  searchParams?: Record<string, string | string[]>
+  params: Promise<P>,
+  searchParams?: Promise<Record<string, string | string[]>>
 }

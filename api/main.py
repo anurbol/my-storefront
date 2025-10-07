@@ -23,6 +23,7 @@ products = {
 
 @app.get("/products")
 def get_products():
+  # I aknowledge the room for optimisation here - to not dynamically create a list out of the dict every time.
   return list(products.values())
 
 @app.get("/product/{product_id}")
