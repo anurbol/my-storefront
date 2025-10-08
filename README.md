@@ -28,6 +28,7 @@ In a real project and with more time, I would do better:
 - error handling
 - tests
 - styling
+- and especially - abstract away to components inside pages.
 
 ## FastAPI
 
